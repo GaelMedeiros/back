@@ -8,31 +8,29 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Loja Chines xing xao</title>
+    <title>Cadastro de Cliente</title>
   </head>
   <body>
-    <h1 class="text-center">Relatório de Clientes</h1>
-    <table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">Email</th>
-    </tr>
-  </thead>
-  <tbody>
-  {% for cliente in clientes %}
-    <tr>
-      <td> {{cliente.ed}}</td>
-      <td>{{cliente.nome}}</td>
-      <td>{{cliente.telefone}}</td>
-      <td>{{cliente.email}}</td>
-    </tr>
-  {% endfor %}
 
-  </tbody>
-</table>
+    <h1>Cadastro de Cliente</h1>
+
+    <form>
+  <div class="form-group">
+    <label for="">Nome</label>
+    <input type="text" class="form-control" placeholder="Digite o nome">
+  </div>
+  <div class="form-group">
+    <label for="">Telefone</label>
+    <input type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="">Email</label>
+    <input type="text" class="form-control" placeholder="Seu email">
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

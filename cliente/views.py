@@ -4,4 +4,7 @@ from .models import Cliente
 
 def fcliente(request):
     clientes = Cliente.objects.all()
-    return render(request, "cad_cliente.html", {"clientes":clientes})
+    return render(request, "rel_cliente.html", {"clientes":clientes})
+
+def Fcadcliente(request):
+    return render(request, "cad_cliente.html")
