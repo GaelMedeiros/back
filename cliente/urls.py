@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import fcliente, Fcadcliente
+from .views import fcliente, Fcadcliente,salvar
 
 urlpatterns = [
 
     path('', fcliente),
-    path('Fcadcliente/', Fcadcliente, name='Fcadcliente')
+    path('Fcadcliente/', Fcadcliente, name='Fcadcliente'),
+    path('salvar/', salvar, name='salvar')
 
 ]
