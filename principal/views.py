@@ -6,3 +6,4 @@ def findex(request):
 
 def fhistoria(request):
     return render(request, "historia.html")
+

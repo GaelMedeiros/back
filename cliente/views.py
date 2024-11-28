@@ -1,5 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Cliente
+from django.contrib.auth.hashers import make_password
+from django.contrib import messages
+
+
 
 # Create your views here.
 
@@ -14,8 +18,11 @@ def salvar_cli(request):
     vnome = request.POST.get("nome")
     vtelefone = request.POST.get("telefone")
     vemail = request.POST.get("email")
+    vsenha = request.POST.get("senha")
+
+    senha_criptografada = make_password(vsenha)
     if vnome:
-        Cliente.objects.create(nome=vnome, telefone=vtelefone, email=vemail)
+        Cliente.objects.create(nome=vnome, telefone=vtelefone, email=vemail, senha=senha_criptografada)
     return redirect(fcliente)
 
 def exibir_cli(request, id):
@@ -39,10 +46,25 @@ def update_cli(request, id):
     cliente.save()
     return redirect(fcliente)
 
+def flogin(request):
+    return render(request, "login.html")
 
+def ftelacli(request):
+    return render(request, "telacliente.html")
 
+def logar(request):
+    if request.method == 'POST':
+        email = request.POST.get("email")
+        senha = request.POST.get("password")
 
-
+        try:
+            cliente = Cliente.objects.get(email=email)
+            if cliente.check_password(senha):
+                return redirect('ftelacli')
+            else:
+                return redirect('flogin')
+        except Cliente.DoesNotExist:
+            messages.error(request, 'Credenciais inválidas.')
 
 
 
