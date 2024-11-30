@@ -20,5 +20,5 @@ class Cliente(models.Model):
     def __str__(self):
         return self.senha
     # REGRA DE NEGÓCIO PARA VERIFICAR A SENHA DO CLIENTE
-    def check_password(selfself, senha):
-        return  check_password(senha, self.senha)
+    def check_password(self, senha):
+        return check_password(senha, self.senha)

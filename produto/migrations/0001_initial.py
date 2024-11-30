@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('descricao', models.CharField(max_length=100)),
                 ('preco', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('quantidade', models.IntegerField()),
-                ('imagem', models.ImageField(blank=True, null=True, upload_to='imagens/')),
+                ('imagem', models.ImageField(blank=True, null=True, upload_to='img/')),
             ],
         ),
     ]

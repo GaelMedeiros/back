@@ -10,50 +10,66 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-      <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
     <title>Celular Amigo</title>
-      <h1 ALIGN="CENTER">ESSA É A NOSSA HISTÓRIA</h1>
   </head>
+
   <body>
+    <!-- Cabeçalho -->
+    <header class="bg-primary text-white text-center py-5">
+      <h1>ESSA É A NOSSA HISTÓRIA</h1>
+    </header>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Celular Amigo</a>
 
-  <!-- Botão de alternância para a navbar -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <!-- Botão de alternância para a navbar em dispositivos móveis -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <!-- Menu de navegação -->
-  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-    <ul class="navbar-nav mr-auto">
-      <!-- Link para a Home -->
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'findex' %}">Home <span class="sr-only">(página atual)</span></a>
-      </li>
-      <!-- Link para 'Nossa História' dentro da navbar -->
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'fhistoria' %}">Nossa História</a>
-      </li>
-      <!-- Menu suspenso -->
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Produtos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Ação</a>
-          <a class="dropdown-item" href="#">Outra ação</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Algo mais aqui</a>
-        </div>
-        <li class="nav-item">
-         <a class="nav-link disable" href="{% url 'flogin' %}">Login</a>
-        </li>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <!-- Menu de navegação -->
+      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+          <!-- Link para a Home -->
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'findex' %}">Home <span class="sr-only">(página atual)</span></a>
+          </li>
+          <!-- Link para 'Nossa História' -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'fhistoria' %}">Nossa História</a>
+          </li>
+          <!-- Menu suspenso Produtos -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Produtos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Ação</a>
+              <a class="dropdown-item" href="#">Outra ação</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Algo mais aqui</a>
+            </div>
+          </li>
+          <!-- Link para Login -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'flogin' %}">Login</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Seção de História -->
+    <section id="historia" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Nossa História</h2>
+        <p>A nossa loja começou com uma missão simples: oferecer celulares de qualidade com um atendimento excepcional. Desde a nossa fundação, temos buscado as últimas inovações tecnológicas, oferecendo produtos de marcas renomadas e um excelente suporte para nossos clientes.</p>
+        <p>Com o passar dos anos, nossa loja cresceu e se tornou referência no mercado local, oferecendo uma experiência de compra online segura e eficiente. Hoje, estamos orgulhosos de servir milhares de clientes satisfeitos todos os dias.</p>
+      </div>
+    </section>
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
@@ -62,3 +78,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+

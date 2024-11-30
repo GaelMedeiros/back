@@ -55,7 +55,7 @@ def ftelacli(request):
 def logar(request):
     if request.method == 'POST':
         email = request.POST.get("email")
-        senha = request.POST.get("password")
+        senha = request.POST.get("senha")
 
         try:
             cliente = Cliente.objects.get(email=email)

@@ -7,3 +7,6 @@ def findex(request):
 def fhistoria(request):
     return render(request, "historia.html")
 
+def vproduto(request):
+    return render(request, "vproduto.html")
+

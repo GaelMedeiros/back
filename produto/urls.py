@@ -12,4 +12,5 @@ urlpatterns = [
     path('update/<int:id>',update, name='update'),
 
 
+
 ]
