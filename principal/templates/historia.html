@@ -1,6 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
-
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
     <!-- Meta tags Obrigatórias -->
@@ -13,69 +12,145 @@
     <!-- CSS Customizado -->
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
 
-    <title>Celular Amigo</title>
-  </head>
+    <title>A Lenda do Guerreiro</title>
 
-  <body>
+   <style>
+        /* CSS básico para estilo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-item {
+            background-color: white;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .product-item h3 {
+            margin: 10px 0;
+        }
+
+        .product-item .price {
+            font-size: 18px;
+            color: #27ae60;
+        }
+
+        .product-item button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .product-item button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
     <!-- Cabeçalho -->
-    <header class="bg-primary text-white text-center py-5">
-      <h1>ESSA É A NOSSA HISTÓRIA</h1>
+    <header>
+        <h1>Loja de Quadrinhos</h1>
+        <nav>
+            <a href="{% url 'findex' %}">Início</a>
+            <a href="{% url 'vproduto' %}">Produtos</a>
+            <a href="#">Contato</a>
+        </nav>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Celular Amigo</a>
-
-      <!-- Botão de alternância para a navbar em dispositivos móveis -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Menu de navegação -->
-      <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-        <ul class="navbar-nav mr-auto">
-          <!-- Link para a Home -->
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'findex' %}">Home <span class="sr-only">(página atual)</span></a>
-          </li>
-          <!-- Link para 'Nossa História' -->
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'fhistoria' %}">Nossa História</a>
-          </li>
-          <!-- Menu suspenso Produtos -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Produtos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Ação</a>
-              <a class="dropdown-item" href="#">Outra ação</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Algo mais aqui</a>
-            </div>
-          </li>
-          <!-- Link para Login -->
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'flogin' %}">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Seção de História -->
-    <section id="historia" class="py-5">
+    <!-- Seção de História Mítica -->
+    <section id="historia">
       <div class="container">
-        <h2 class="text-center mb-4">Nossa História</h2>
-        <p>A nossa loja começou com uma missão simples: oferecer celulares de qualidade com um atendimento excepcional. Desde a nossa fundação, temos buscado as últimas inovações tecnológicas, oferecendo produtos de marcas renomadas e um excelente suporte para nossos clientes.</p>
-        <p>Com o passar dos anos, nossa loja cresceu e se tornou referência no mercado local, oferecendo uma experiência de compra online segura e eficiente. Hoje, estamos orgulhosos de servir milhares de clientes satisfeitos todos os dias.</p>
+        <h2>A Jornada da loja de Quadrinhos</h2>
+        <p>Há muitos anos, em um vilarejo distante, uma loja mística de quadrinhos surgiu. Seu nome? El quadrinhos. Era dito que os produtos dessa loja não eram apenas tecnológicos, mas possuíam poderes extraordinários. Lendas antigas falavam sobre um celular capaz de ouvir pensamentos, outro que fazia viagens no tempo e até mesmo um que conectava almas.</p>
+        <p>Os fundadores da loja, dois irmãos sábios, decidiram que a magia da tecnologia deveria ser compartilhada com o mundo. A cada quadrinho que vendiam, um cliente encontrava mais do que apenas uma nova história, mas uma chave para aventuras que transcendiam o mundo.</p>
+
+        <!-- Imagem Mística -->
+        <div class="image-wrapper">
+          <img src="{% static 'img/goku.jpg' %}" alt="O celular mágico">
+          <div class="overlay">
+            <h3>A Magia do quadrinho</h3>
+          </div>
+        </div>
+
+        <p>Com o passar dos anos, o el quadrinho não apenas cresceu em popularidade, mas se tornou uma lenda viva. Clientes de todas as partes vinham em busca dos melhores quadrinhos, aquele que lhes traria sabedoria, prosperidade ou até mesmo revelações sobre o futuro.</p>
+        <p>Hoje, nossa missão continua. Oferecemos não apenas produtos, mas experiências que mudam a vida de quem os possui. Venha descobrir os quadrinhos que podem transformar sua realidade. Quem sabe, talvez você encontre um amigo de outra dimensão.</p>
       </div>
     </section>
 
     <!-- JavaScript (Opcional) -->
-    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
-
