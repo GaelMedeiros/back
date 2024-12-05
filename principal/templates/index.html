@@ -122,7 +122,7 @@
     <!-- Cabeçalho -->
  <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <a class="navbar-brand text-white" href="{% url 'vproduto' %}">Loja de Quadrinho</a>
+    <a class="navbar-brand text-white" href="">Loja de Quadrinho</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -135,10 +135,11 @@
           <a class="nav-link text-white" href="{% url 'fhistoria' %}">Nossa História</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle text-white" href="{% url 'vproduto' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</a>
+          <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'vproduto' %}">celulares</a>
-            <a class="dropdown-item" href="{% url 'vproduto' %}">capas</a>
+            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=celular">celulares</a>
+            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=capa">Capas</a>
+            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=acessorios">Acessórios</a>
             <div class="dropdown-divider"></div>
           </div>
         </li>
@@ -150,34 +151,6 @@
   </nav>
 </header>
 
-<!--  &lt;!&ndash; Navbar &ndash;&gt;-->
-<!--  <nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-<!--    <a class="navbar-brand" href="#">Celular Amigo</a>-->
-<!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">-->
-<!--      <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="navbarNav">-->
-<!--      <ul class="navbar-nav ml-auto">-->
-<!--        <li class="nav-item active">-->
-<!--          <a class="nav-link" href="{% url 'findex' %}">Home</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link" href="{% url 'fhistoria' %}">Nossa História</a>-->
-<!--        </li>-->
-<!--        <li class="nav-item dropdown">-->
-<!--          <a class="nav-link dropdown-toggle" href="{% url 'vproduto' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</a>-->
-<!--          <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--            <a class="dropdown-item" href="{% url 'vproduto' %}">celulares</a>-->
-<!--            <a class="dropdown-item" href="{% url 'vproduto' %}">capas</a>-->
-<!--            <div class="dropdown-divider"></div>-->
-<!--          </div>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link" href="{% url 'flogin' %}">Login</a>-->
-<!--        </li>-->
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </nav>-->
 
   <!-- Carrossel -->
   <div id="carouselExampleIndicators" class="carousel slide imagens" data-ride="carousel">
@@ -198,11 +171,11 @@
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="carousel-control-prev-icon" style="background-color:red" aria-hidden="true"></span>
       <span class="sr-only">Anterior</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="carousel-control-next-icon" style="background-color:red" aria-hidden="true"></span>
       <span class="sr-only">Próximo</span>
     </a>
   </div>
