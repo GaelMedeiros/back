@@ -127,12 +127,18 @@
             <div class="row">
                  {% for produto in produtos %}
                 <div class="col-md-4" style="padding: 10px;">
-                    <div class="card text-center" style="width: 18rem;">
-                       <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" style="width: 200px; height: 200px;" class="card-img-top mx-auto d-block">
+                    <div class="card text-center shadow-sm rounded" style="width: 20rem; heigth: auto;">
+                     {% if produto.imagem %}
+                       <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" style="width: 1; height: 300px; object-fit: cover;" class="card-img-top mx-auto d-block">
+                     {% endif %}
                       <div class="card-body">
                         <h5 class="card-title">{{produto.nome}}</h5>
                         <p class="card-text">{{produto.preco}}</p>
-                        <a href="#" class="btn btn-primary">Comprar</a>
+                      <form action="{% url 'addcarrinho' produto.id %}" method="post">
+                          {% csrf_token %}
+                          <input type="number" name="quantidade" min="1" value="1" style="...">
+                          <button type="submit"  class="btn btn-primary">Comprar</button>
+                      </form>
                       </div>
                     </div>
                 </div>
@@ -140,6 +146,8 @@
             </div>
 
             </div>
+
+
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Loja de quadrinhos | <a href="#">Termos de Serviço</a> | <a href="#">Política de Privacidade</a></p>

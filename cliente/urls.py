@@ -24,6 +24,7 @@ urlpatterns = [
     path('salvar_cli/', salvar_cli, name='salvar_cli'),
     path('excluir_cli/<int:id>', excluir_cli, name='excluir_cli'),
     path('exibir_cli/<int:id>', exibir_cli, name='exibir_cli'),
+    path('exibir_cli/', exibir_cli, name='exibir_cli'),
     path('update_cli/<int:id>', update_cli, name='update_cli'),
     path('flogin/', flogin, name='flogin'),
     path('ftelacli/', ftelacli, name='ftelacli'),

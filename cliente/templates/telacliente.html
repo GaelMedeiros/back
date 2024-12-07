@@ -24,14 +24,14 @@
     <ul class="navbar-nav">
 
       <li class="nav-item">
-  <a class="nav-link" href="{% url 'ftelacli' %}">Dados Pessoais</a>
+  <a class="nav-link" href="{% url 'exibir_cli' %}">Dados Pessoais</a>
 </li>
       <!-- TRABALHAR A SESSÃO DO USUÁRIO -->
        <ul class="navbar-nav ml-auto">
         {% if request.session.cliente_nome %}
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logar' %}">Sair</a>
+            <a class="nav-link" href="{% url 'flogin' %}">Sair</a>
           </li>
            <li class="nav-item">
             <span class="navbar-text">Bem-vindo, {{ request.session.cliente_nome }}!</span>
