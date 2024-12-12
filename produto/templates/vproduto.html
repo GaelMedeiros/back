@@ -127,9 +127,9 @@
             <div class="row">
                  {% for produto in produtos %}
                 <div class="col-md-4" style="padding: 10px;">
-                    <div class="card text-center shadow-sm rounded" style="width: 20rem; heigth: auto;">
+                    <div class="card text-center shadow-sm rounded; " style="width: 20rem; heigth: auto;">
                      {% if produto.imagem %}
-                       <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}" style="width: 1; height: 300px; object-fit: cover;" class="card-img-top mx-auto d-block">
+                       <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}"  style="width: 1; height: 300px; object-fit: cover;" class="card-img-top mx-auto d-block" >
                      {% endif %}
                       <div class="card-body">
                         <h5 class="card-title">{{produto.nome}}</h5>

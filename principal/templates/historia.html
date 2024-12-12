@@ -1,7 +1,10 @@
 {% load static %}
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <!-- Carrega as tags estáticas -->
+    {% load static %}
+
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -115,6 +118,12 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .image-wrapper img {
+             display: block;
+             margin: auto;
+             width: 50%;
+        }
     </style>
 </head>
 <body>
@@ -137,9 +146,6 @@
         <!-- Imagem Mística -->
         <div class="image-wrapper">
           <img src="{% static 'img/goku.jpg' %}" alt="O celular mágico">
-          <div class="overlay">
-            <h3>A Magia do quadrinho</h3>
-          </div>
         </div>
 
         <p>Com o passar dos anos, o el quadrinho não apenas cresceu em popularidade, mas se tornou uma lenda viva. Clientes de todas as partes vinham em busca dos melhores quadrinhos, aquele que lhes traria sabedoria, prosperidade ou até mesmo revelações sobre o futuro.</p>
