@@ -15,108 +15,7 @@
   </head>
 
   <body>
-<style>
-        /* CSS básico para estilo */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
 
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .product-item {
-            background-color: white;
-            margin: 10px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 200px;
-            text-align: center;
-        }
-
-        .product-item img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 15px;
-        }
-
-        .product-item h3 {
-            margin: 10px 0;
-        }
-
-        .product-item .price {
-            font-size: 18px;
-            color: #27ae60;
-        }
-
-        .product-item button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .product-item button:hover {
-            background-color: #2980b9;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -142,8 +41,8 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Produtos</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=celular">celulares</a>
-            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=capa">Capas</a>
+            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=manga">manga</a>
+            <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=figure_action">figure_action</a>
             <a class="dropdown-item" href="{% url 'flista_produtos' %}?categoria=acessorios">Acessórios</a>
 
             <div class="dropdown-divider"></div>
@@ -157,9 +56,24 @@
             {% endfor %}
         </div>
     {% endif %}
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'flogin' %}">Login</a>
-        </li>
+
+          <!-- TRABALHAR A SESSÃO DO USUÁRIO -->
+       <ul class="navbar-nav ml-auto">
+        {% if request.session.cliente_nome %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logar' %}">Sair</a>
+          </li>
+           <li class="nav-item">
+            <span class="navbar-text">Bem-vindo, {{ request.session.cliente_nome }}!</span>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'flogin' %}">Entrar</a>
+          </li>
+        {% endif %}
+      </ul>
+
       </ul>
     </div>
   </nav>
@@ -233,7 +147,7 @@
 
   <!-- Rodapé -->
   <footer>
-    <p>&copy; 2024 Celular Amigo - Todos os direitos reservados</p>
+    <p>&copy; 2024 Loja de Quadrinhos - Todos os direitos reservados</p>
   </footer>
 
   <!-- JavaScript (Opcional) -->

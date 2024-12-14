@@ -15,16 +15,13 @@ def addcarrinho(request, produto_id):
             if cliente_id:
                 cliente = Cliente.objects.get(id=cliente_id)
                 ItemCarrinho.objects.create(cliente=cliente, produto=produto, quantidade=quantidade)
-
                 messages.success(request, 'Produto adicionado ao carrinho')
-
             else:
                 messages.error(request, 'Você precisa estar logado para adicionar produtos ao carrinho!')
-
         except Produto.DoesNotExist:
             messages.error(request,'Produto não encontrando.')
 
-            return redirect('findex')
+        return redirect('findex')
 
 def exibir_carrinho(request):
     cliente_id = request.session.get('cliente_id')
@@ -35,3 +32,5 @@ def exibir_carrinho(request):
     else:
         messages.error(request, 'Você precisa estar logado para ver o carrinho.')
         return render(request, "login.html")
+
+

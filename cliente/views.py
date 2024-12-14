@@ -61,8 +61,6 @@ def update_cli(request, id):
 def flogin(request):
     return render(request, "login.html")
 
-def ftelacli(request):
-    return render(request, "telacliente.html")
 
 def logar(request):
     if request.method == 'POST':
@@ -79,6 +77,7 @@ def logar(request):
                 return redirect('flogin')
         except Cliente.DoesNotExist:
             messages.error(request, 'Credenciais inválidas.')
+            return redirect('flogin')
 
 def logout(request): #fazer logout do cliente
     try:
